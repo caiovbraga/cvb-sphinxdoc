@@ -1,0 +1,29 @@
+version: '3'
+
+networks:
+  web:
+    external: true
+  backend:
+    external: true
+
+services:
+  sphinxdoc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: cvb-sphinxdoc
+    container_name: cvb-sphinxdoc
+    volumes:
+      - ./docs:/docs
+    networks:
+      - backend
+
+  sphinxdoc-web:
+    image: busybox
+    container_name: sphinxdoc-web
+    volumes:
+      - ./docs/build/html:/srv/html
+    working_dir: /srv/html
+    command: busybox httpd -f -p 8000
+    networks:
+      - web

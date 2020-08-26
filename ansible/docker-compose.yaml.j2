@@ -1,0 +1,24 @@
+version: '3'
+
+networks:
+  web:
+    external: true
+  backend:
+    external: true
+
+services:
+  sphinxdoc:
+    image: cvb-sphinxdoc
+    volumes:
+      - ./sphinx/docs:/docs
+    networks:
+      - backend
+
+  sphinxdoc-web:
+    image: busybox
+    volumes:
+      - ./sphinx/docs/build/html:/srv/html
+    working_dir: /srv/html
+    command: busybox httpd -f -p 8000
+    networks:
+      - web
