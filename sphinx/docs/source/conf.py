@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'My Documentation'
+project = 'My Example Documentation'
 copyright = '2020, Caio Venturini Braga'
 author = 'Caio Venturini Braga'
 

@@ -21,6 +21,8 @@ services:
   sphinxdoc-web:
     image: busybox
     container_name: sphinxdoc-web
+    ports:
+      - 80:8000
     volumes:
       - ./docs/build/html:/srv/html
     working_dir: /srv/html
