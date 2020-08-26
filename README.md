@@ -5,8 +5,8 @@ This demo uses the official *sphinxdoc/sphinx* image available in dockerhub to g
 ---
 ## Prerequisites
 
-* For localhost, you need a machine with **Docker** and **Docke -Compose** installed.
-* For remote host deployment, just need **Ansible**.
+* For localhost, you need a machine with **Docker** and **Docke Compose** installed.
+* For remote host deployment, you just need **Ansible**.
 
 ---
 ## Usage
@@ -22,7 +22,9 @@ Write your documentation files '.rst' under the **source/** directory.
 In the **sphinx/** directory, run:
 `docker-compose up -d`
 
-This will build the documentation and launch a http static server. Open your browser and go to http://0.0.0.0 to see your documentation
+This will build the documentation and launch a http static server.
+Open your browser and go to http://0.0.0.0 to see your documentation.
+
 
 ### Remote host
 Under **ansible/**, create a directory named *.inventory* and a **hosts** file with your remote host details.

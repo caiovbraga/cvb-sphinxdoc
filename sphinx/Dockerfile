@@ -1,5 +1,5 @@
 FROM sphinxdoc/sphinx
-LABEL maintainer="cvbraga@swgenie.com"
+LABEL maintainer="cvbraga"
 
 COPY docs /docs
 
